@@ -1,0 +1,103 @@
+
+<div class="fundo">
+    <form class="row g-3">
+        <div class="col-md-6">
+          <label class="form-label">Nome</label>
+          <input type="name" class="form-control" id="nome" name="nome" [(ngModel)]="model.nome">
+        </div>
+        <div class="col-md-6">
+          <label  class="form-label">Sobrenome</label>
+          <input type="name" class="form-control" name="Sobrenome" [(ngModel)]="model.sobrenome" id="Sobrenome">
+        </div>
+        <div class="col-2">
+          <label class="form-label">Idade</label>
+          <input type="number" class="form-control" id="Idade" name="Idade" [(ngModel)]="model.idade">
+        </div>
+        <div class="col-4">
+          <label class="form-label" >Tipo Pessoa</label>
+          <select class="form-control" name="tipopessoa" placeholder="teste" [(ngModel)]="model.tipoDePessoa">
+              <option ngValue="fisica" > Física</option>
+              <option ngValue="juridica" >Jurídica</option>
+          </select>
+        </div>
+        <div class="col-4">
+          <label  class="form-label" > Documento &nbsp; </label>
+          <label  *ngIf="model.tipoDePessoa == 'fisica' " > CPF </label>
+          <label  *ngIf="model.tipoDePessoa == 'juridica' " > CNPJ </label>
+          <input type="text" class="form-control" id="Documento" name="nome" [(ngModel)]="model.documento">
+        </div>
+        <div class="col-md-2">
+          <label class="form-label">Situação</label>
+          <select id="Situacao" class="form-select" name="Situacao" [(ngModel)]="model.situacao">
+            <option value="--">Critica</option>
+            <option value="--">Positiva</option>
+            <option value="--">Em analise</option>
+          </select>
+        </div>
+        <div class="col-md-2">
+          <label  class="form-label">Rua</label>
+          <input type="text" class="form-control" id="rua" name="rua" [(ngModel)]="model.rua">
+        </div>
+        <div class="col-md-4">
+          <label class="form-label">Estado</label>
+          <select id="Estado" class="form-select" name="Estado" [(ngModel)]="model.estado">
+            <option value="--">--</option>
+        <option value="AC">Acre</option>
+        <option value="AL">Alagoas</option>
+        <option value="AP">Amapá</option>
+        <option value="AM">Amazonas</option>
+        <option value="BA">Bahia</option>
+        <option value="CE">Ceará</option>
+        <option value="DF">Distrito Federal</option>
+        <option value="ES">Espírito Santo</option>
+        <option value="GO">Goiás</option>
+        <option value="MA">Maranhão</option>
+        <option value="MT">Mato Grosso</option>
+        <option value="MS">Mato Grosso do Sul</option>
+        <option value="MG">Minas Gerais</option>
+        <option value="PA">Pará</option>
+        <option value="PB">Paraíba</option>
+        <option value="PR">Paraná</option>
+        <option value="PE">Pernambuco</option>
+        <option value="PI">Piauí</option>
+        <option value="RJ">Rio de Janeiro</option>
+        <option value="RN">Rio Grande do Norte</option>
+        <option value="RS">Rio Grande do Sul</option>
+        <option value="RO">Rondônia</option>
+        <option value="RR">Roraima</option>
+        <option value="SC">Santa Catarina</option>
+        <option value="SP">São Paulo</option>
+        <option value="SE">Sergipe</option>
+        <option value="TO">Tocantins</option>
+          </select>
+        </div>
+        <div class="col-md-6">
+          <label  class="form-label">Cidade</label>
+          <input type="text" class="form-control" id="Cidade" name="Cidade" [(ngModel)]="model.cidade">
+        </div>
+        <div>
+        <h4>Tabela de pacientes que não estão no banco de dados</h4>
+        <table class="container table mt-5" *ngIf="!this.exibirTabela" class="table">
+          <thead>
+            <tr>
+            <th scope="col">Nome</th>
+            <th scope="col">Sobrenome</th>
+            <th scope="col">Universo</th>
+            </tr>
+          </thead>
+        <tbody>
+         <tr *ngFor="let Paciente of Paciente" >
+            <th scope="row">{{Paciente.nome}}</th>
+            <th scope="row">{{Paciente.sobrenome}}</th>
+            <th scope="row">{{Paciente.universo}}</th>
+         </tr>
+        </tbody>
+      </table>
+    </div>
+        <div class="col-12">
+          <button (click)="onSubmit()" type="submit" class="btn btn-primary">Sign in</button>
+          <button class="mb-3" type="button" class="btn btn-secondary" (click)="onMostrarTabela()">Mostrar/Ocultar Tabela</button>
+          <input class="btn btn-outline-danger" type="reset" value="Limpar campos">
+        </div>
+      </form>
+</div>

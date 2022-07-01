@@ -8,13 +8,19 @@ import { MeuComponentComponent } from './meu-component/meu-component.component';
 import { BootstrapComponentComponent } from './bootstrap-component/bootstrap-component.component';
 import { NavbarComponentComponent } from './navbar-component/navbar-component.component';
 import { RouterModule } from '@angular/router';
+import { TestComponentComponent } from './test-component/test-component.component';
+import { FlexwapComponentComponent } from './flexwap-component/flexwap-component.component';
+import { FistprojectComponentComponent } from './fistproject-component/fistproject-component.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     MeuComponentComponent,
     BootstrapComponentComponent,
-    NavbarComponentComponent
+    NavbarComponentComponent,
+    TestComponentComponent,
+    FlexwapComponentComponent,
+    FistprojectComponentComponent,
   ],
   imports: [
     BrowserModule,

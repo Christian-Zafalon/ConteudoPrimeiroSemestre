@@ -1,0 +1,114 @@
+<style>
+    .flex-container{
+        display: flex;
+        /*height: 150px;*/
+        border: 2px solid black;
+        max-width: 300px;
+       /* flex-direction: column; transforma tudo em coluna*/
+    }
+
+    .item{
+        font-size: 24px;
+        height: 50%;
+        text-align: center;
+        min-width: 80px;
+        max-width: 60px;
+        width: 100px;
+        line-height: 300%;
+
+    }
+
+    .nowrap{
+        flex-wrap: nowrap;
+        
+    }
+
+    .wrap{
+        flex-wrap: wrap;
+        /*flex-flow: row-reverse wrap;*/
+    }
+
+    .wrap-reverse{
+        flex-wrap: wrap-reverse;
+    }
+
+    .blue{
+        border-radius: 50%;
+        background-color: lightblue;
+    }
+
+    .green{
+        border-radius: 50%;
+        background-color: lightgreen;
+    }
+
+    .orange{
+        border-radius: 50%;
+        background-color: lightcoral;
+    }
+
+    .pink{
+        border-radius: 50%;
+        background-color: lightpink;
+    }
+
+    .red{
+        border-radius: 50%;
+        background-color: lightsalmon;
+    }
+    .yellow{
+        border-radius: 50%;
+        background-color: rgb(186, 186, 56);
+    }
+
+    .flexS{
+        justify-content: flex-end;
+        justify-content: end;
+        justify-content: center;
+        justify-content: space-between; /*Distribui em todo o espaço de maneira uniforme*/
+        justify-content: space-around; /*igual o beetwen, porem da um espacamento nas bordas*/
+
+    }
+
+    .align{ /*Esses Align são alterados de acordo com o texto*/
+        align-items: center;
+        align-items: stretch; /*conforme o texto aumenta o conteudo dos outros itens aumentam tb*/
+        align-items: flex-start;
+        align-items: flex-end;
+    }
+</style>
+<div>
+<body>
+    <ul>
+    <h1>No Wrap</h1>
+    <div class="flex-container ">
+        <div class="item blue">1</div>
+        <div class="item green">2</div>
+        <div class="item orange">3</div>
+        <div class="item pink">4</div>
+        <div class="item red">5</div>
+        <div class="item yellow">6</div>
+        
+    </div>
+    <h1>Wrap</h1>
+    <div class="flex-container wrap  ">
+        <div class="item green">1</div>
+        <div class="item pink">2</div>
+        <div class="item orange ">3</div>
+        <div class="item pink">4</div>
+        <div class="item red">5</div>
+        <div class="item yellow">6</div>
+        
+    </div>
+    <h1>Wrap Reverse</h1>
+    <div class="flex-container wrap-reverse">
+        <div class="item green">1</div>
+        <div class="item pink">2</div>
+        <div class="item orange">3</div>
+        <div class="item pink">4</div>
+        <div class="item red">5</div>
+        <div class="item yellow">6</div>
+    </div>
+</ul>
+</body>
+</div>

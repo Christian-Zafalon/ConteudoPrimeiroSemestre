@@ -1,6 +1,10 @@
 
-<div class="fundo">
+<body class="post">
+  
+<div class="fundo, post" >
     <form class="row g-3">
+      
+      
         <div class="col-md-6">
           <label class="form-label">Nome</label>
           <input type="name" class="form-control" id="nome" name="nome" [(ngModel)]="model.nome">
@@ -75,6 +79,10 @@
           <label  class="form-label">Cidade</label>
           <input type="text" class="form-control" id="Cidade" name="Cidade" [(ngModel)]="model.cidade">
         </div>
+      
+      
+
+
         <div>
         <h4>Tabela de pacientes que não estão no banco de dados</h4>
         <table class="container table mt-5" *ngIf="!this.exibirTabela" class="table">
@@ -101,3 +109,4 @@
         </div>
       </form>
 </div>
+</body>
